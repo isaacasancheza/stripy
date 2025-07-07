@@ -1,15 +1,14 @@
 from typing import TYPE_CHECKING
 
-from pydantic import HttpUrl
+from pydantic import BaseModel, HttpUrl
 
 from stripy import stripe_fields
-from stripy.stripe_models.base import get_models_base_class
 
 if TYPE_CHECKING:
     from stripy.stripe_models.prices import Price
 
 
-class Product(get_models_base_class()):
+class Product(BaseModel):
     """
     https://docs.stripe.com/api/prices/object?lang=python
     """
@@ -21,9 +20,9 @@ class Product(get_models_base_class()):
     livemode: bool
 
     images: list[HttpUrl] = []
-    metadata: stripe_fields.StripeMetadata | None = None
+    metadata: stripe_fields.Metadata | None = None
     description: str | None = None
     default_price: 'Price | None' = None
 
-    created: stripe_fields.StripeDatetimeFromTimestamp
-    updated: stripe_fields.StripeDatetimeFromTimestamp
+    created: stripe_fields.DatetimeFromTimestamp
+    updated: stripe_fields.DatetimeFromTimestamp

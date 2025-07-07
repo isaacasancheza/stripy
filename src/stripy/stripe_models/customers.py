@@ -1,8 +1,9 @@
+from pydantic import BaseModel
+
 from stripy import stripe_fields
-from stripy.stripe_models.base import get_models_base_class
 
 
-class Customer(get_models_base_class()):
+class Customer(BaseModel):
     """
     https://docs.stripe.com/api/customers/object?lang=python
     """
@@ -12,6 +13,6 @@ class Customer(get_models_base_class()):
     name: str | None = None
     email: str | None = None
     phone: str | None = None
-    metadata: stripe_fields.StripeMetadata | None = None
+    metadata: stripe_fields.Metadata | None = None
 
-    created: stripe_fields.StripeDatetimeFromTimestamp
+    created: stripe_fields.DatetimeFromTimestamp

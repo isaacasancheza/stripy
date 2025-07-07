@@ -1,15 +1,14 @@
 from decimal import Decimal
 from typing import Annotated
 
-from pydantic import AfterValidator
+from pydantic import AfterValidator, BaseModel
 
 from stripy import stripe_constants, stripe_fields
-from stripy.stripe_models.base import get_models_base_class
 
 type PercentOff = Annotated[Decimal, AfterValidator(lambda v: v / 100)]
 
 
-class Coupon(get_models_base_class()):
+class Coupon(BaseModel):
     """
     https://docs.stripe.com/api/coupons/object?lang=python
     """
@@ -23,4 +22,4 @@ class Coupon(get_models_base_class()):
     amount_off: stripe_fields.StripeDecimalFromInt | None = None
     percent_off: PercentOff | None = None
 
-    created: stripe_fields.StripeDatetimeFromTimestamp
+    created: stripe_fields.DatetimeFromTimestamp

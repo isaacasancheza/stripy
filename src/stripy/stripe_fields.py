@@ -5,7 +5,7 @@ from typing import Any
 from pydantic import GetCoreSchemaHandler
 from pydantic_core import core_schema
 
-type StripeMetadata = dict[str, str]
+type Metadata = dict[str, str]
 
 
 class StripeDecimalFromInt(Decimal):
@@ -34,7 +34,7 @@ class StripeDecimalFromInt(Decimal):
         return Decimal(str(value / 100))
 
 
-class StripeDatetimeFromTimestamp(datetime):
+class DatetimeFromTimestamp(datetime):
     @classmethod
     def __get_pydantic_core_schema__(
         cls,

@@ -1,13 +1,14 @@
 from typing import TYPE_CHECKING
 
+from pydantic import BaseModel
+
 from stripy import stripe_constants, stripe_fields
-from stripy.stripe_models.base import get_models_base_class
 
 if TYPE_CHECKING:
     from stripy.stripe_models.products import Product
 
 
-class Price(get_models_base_class()):
+class Price(BaseModel):
     """
     https://docs.stripe.com/api/prices/object?lang=python
     """
@@ -19,8 +20,8 @@ class Price(get_models_base_class()):
     billing_scheme: stripe_constants.PriceBillingScheme
 
     nickname: str | None = None
-    metadata: stripe_fields.StripeMetadata | None = None
+    metadata: stripe_fields.Metadata | None = None
     unit_amount: stripe_fields.StripeDecimalFromInt | None = None
 
-    created: stripe_fields.StripeDatetimeFromTimestamp
-    updated: stripe_fields.StripeDatetimeFromTimestamp
+    created: stripe_fields.DatetimeFromTimestamp
+    updated: stripe_fields.DatetimeFromTimestamp
