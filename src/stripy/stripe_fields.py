@@ -8,7 +8,7 @@ from pydantic_core import core_schema
 type Metadata = dict[str, str]
 
 
-class StripeDecimalFromInt(Decimal):
+class DecimalFromInt(Decimal):
     @classmethod
     def __get_pydantic_core_schema__(
         cls,

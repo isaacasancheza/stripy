@@ -17,7 +17,7 @@ class PaymentIntent(BaseModel):
     id: str
     status: stripe_constants.PaymentIntentStatus
     currency: str
-    amount_received: stripe_fields.StripeDecimalFromInt
+    amount_received: stripe_fields.DecimalFromInt
 
     metadata: stripe_fields.Metadata | None = None
     customer: 'Customer | None' = None

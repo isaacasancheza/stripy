@@ -1,3 +1,6 @@
+from .checkout_session import (
+    CheckoutSession,
+)
 from .coupons import (
     Coupon,
 )

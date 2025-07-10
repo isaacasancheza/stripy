@@ -21,7 +21,7 @@ class Price(BaseModel):
 
     nickname: str | None = None
     metadata: stripe_fields.Metadata | None = None
-    unit_amount: stripe_fields.StripeDecimalFromInt | None = None
+    unit_amount: stripe_fields.DecimalFromInt | None = None
 
     created: stripe_fields.DatetimeFromTimestamp
     updated: stripe_fields.DatetimeFromTimestamp

@@ -19,7 +19,7 @@ class Coupon(BaseModel):
 
     name: str | None = None
     currency: str | None = None
-    amount_off: stripe_fields.StripeDecimalFromInt | None = None
+    amount_off: stripe_fields.DecimalFromInt | None = None
     percent_off: PercentOff | None = None
 
     created: stripe_fields.DatetimeFromTimestamp
