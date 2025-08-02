@@ -6,6 +6,7 @@ from stripy import stripe_constants, stripe_fields
 
 if TYPE_CHECKING:
     from stripy.stripe_models.customers import Customer
+    from stripy.stripe_models.discounts import Discount
     from stripy.stripe_models.payment_intents import PaymentIntent
 
 
@@ -24,6 +25,7 @@ class CheckoutSession(BaseModel):
     success_url: str | None = None
 
     customer: 'Customer | None' = None
+    discounts: 'list[Discount] | None' = None
     payment_intent: 'PaymentIntent | None' = None
 
     created: stripe_fields.DatetimeFromTimestamp
