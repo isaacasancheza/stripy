@@ -15,11 +15,7 @@ class CheckoutSession(BaseModel):
     mode: stripe_constants.CheckoutSessionMode
     payment_status: stripe_constants.CheckoutSessionPaymentStatus
 
-    url: str | None = None
     currency: str | None = None
-    return_url: str | None = None
-    success_url: str | None = None
-
     customer: Customer | None = None
     discounts: list[Discount] | None = None
     payment_intent: PaymentIntent | None = None
