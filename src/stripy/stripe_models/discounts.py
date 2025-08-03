@@ -1,13 +1,9 @@
-from typing import TYPE_CHECKING
-
 from pydantic import BaseModel
 
 from stripy import stripe_fields
-
-if TYPE_CHECKING:
-    from stripy.stripe_models.coupons import Coupon
-    from stripy.stripe_models.customers import Customer
-    from stripy.stripe_models.promotion_codes import PromotionCode
+from stripy.stripe_models.coupons import Coupon
+from stripy.stripe_models.customers import Customer
+from stripy.stripe_models.promotion_codes import PromotionCode
 
 
 class Discount(BaseModel):
@@ -17,6 +13,6 @@ class Discount(BaseModel):
 
     id: str
     start: stripe_fields.DatetimeFromTimestamp
-    coupon: 'Coupon'
-    customer: 'Customer | None' = None
-    promotion_code: 'PromotionCode | None' = None
+    coupon: Coupon
+    customer: Customer | None = None
+    promotion_code: PromotionCode | None = None

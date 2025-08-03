@@ -1,11 +1,7 @@
-from typing import TYPE_CHECKING
-
 from pydantic import BaseModel
 
 from stripy import stripe_constants, stripe_fields
-
-if TYPE_CHECKING:
-    from stripy.stripe_models.products import Product
+from stripy.stripe_models.products import Product
 
 
 class Price(BaseModel):
