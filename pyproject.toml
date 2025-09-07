@@ -1,10 +1,12 @@
 [project]
 name = "stripy"
-version = "0.5.0"
+version = "0.5.1"
 description = "Stripe Pydantic Models"
 authors = [
     { name = "Isaac Sánchez", email = "isaac@elrincondelsanchez.com" }
 ]
+readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.13"
 dependencies = [
     "pydantic>=2.11.7",
