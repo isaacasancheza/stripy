@@ -1,6 +1,6 @@
 from pydantic import BaseModel, HttpUrl
 
-from stripy import stripe_fields
+from stripy import fields
 
 
 class Product(BaseModel):
@@ -15,8 +15,8 @@ class Product(BaseModel):
     livemode: bool
 
     images: list[HttpUrl] = []
-    metadata: stripe_fields.Metadata | None = None
+    metadata: fields.Metadata | None = None
     description: str | None = None
 
-    created: stripe_fields.DatetimeFromTimestamp
-    updated: stripe_fields.DatetimeFromTimestamp
+    created: fields.DatetimeFromTimestamp
+    updated: fields.DatetimeFromTimestamp

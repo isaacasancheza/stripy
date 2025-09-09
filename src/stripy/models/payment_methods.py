@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from stripy import stripe_constants, stripe_fields
+from stripy import constants, fields
 
 
 class PaymentMethodCard(BaseModel):
@@ -8,10 +8,10 @@ class PaymentMethodCard(BaseModel):
     https://docs.stripe.com/api/payment_methods/object?lang=python#payment_method_object-card
     """
 
-    brand: stripe_constants.PaymentMethodCardBrand
+    brand: constants.PaymentMethodCardBrand
     exp_month: int
     exp_year: int
-    funding: stripe_constants.PaymentMethodCardFunding
+    funding: constants.PaymentMethodCardFunding
     last4: str
 
 
@@ -24,4 +24,4 @@ class PaymentMethod(BaseModel):
     type: str
     card: PaymentMethodCard | None = None
 
-    created: stripe_fields.DatetimeFromTimestamp
+    created: fields.DatetimeFromTimestamp

@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from decimal import Decimal
-from typing import Any
+from typing import Annotated, Any
 
 from pydantic import GetCoreSchemaHandler
 from pydantic_core import core_schema
@@ -8,7 +8,7 @@ from pydantic_core import core_schema
 type Metadata = dict[str, str]
 
 
-class DecimalFromInt(Decimal):
+class DecimalFromIntAnnotation(Decimal):
     @classmethod
     def __get_pydantic_core_schema__(
         cls,
@@ -34,7 +34,7 @@ class DecimalFromInt(Decimal):
         return Decimal(str(value / 100))
 
 
-class DatetimeFromTimestamp(datetime):
+class DatetimeFromTimestampAnnotation(datetime):
     @classmethod
     def __get_pydantic_core_schema__(
         cls,
@@ -58,3 +58,7 @@ class DatetimeFromTimestamp(datetime):
     @classmethod
     def _timestamp_to_aware_datetime(cls, value: int) -> datetime:
         return datetime.fromtimestamp(value, tz=timezone.utc)
+
+
+type DecimalFromInt = Annotated[Decimal, DecimalFromIntAnnotation]
+type DatetimeFromTimestamp = Annotated[datetime, DatetimeFromTimestampAnnotation]

@@ -2,9 +2,9 @@ from datetime import datetime, timezone
 
 from pydantic import BaseModel
 
-from stripy import stripe_fields
-from stripy.stripe_models.coupons import Coupon
-from stripy.stripe_models.customers import Customer
+from stripy import fields
+from stripy.models.coupons import Coupon
+from stripy.models.customers import Customer
 
 
 class PromotionCode(BaseModel):
@@ -16,14 +16,14 @@ class PromotionCode(BaseModel):
     code: str
     active: bool
     coupon: Coupon
-    expires_at: stripe_fields.DatetimeFromTimestamp | None = None
+    expires_at: fields.DatetimeFromTimestamp | None = None
     times_redeemed: int
     max_redemptions: int | None = None
 
-    metadata: stripe_fields.Metadata | None = None
+    metadata: fields.Metadata | None = None
     customer: Customer | None = None
 
-    created: stripe_fields.DatetimeFromTimestamp
+    created: fields.DatetimeFromTimestamp
 
     @property
     def expired(self):

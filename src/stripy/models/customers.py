@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from stripy import stripe_fields
+from stripy import fields
 
 
 class Customer(BaseModel):
@@ -13,6 +13,6 @@ class Customer(BaseModel):
     name: str | None = None
     email: str | None = None
     phone: str | None = None
-    metadata: stripe_fields.Metadata | None = None
+    metadata: fields.Metadata | None = None
 
-    created: stripe_fields.DatetimeFromTimestamp
+    created: fields.DatetimeFromTimestamp

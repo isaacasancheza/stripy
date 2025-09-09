@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
-from stripy import stripe_fields
-from stripy.stripe_models.coupons import Coupon
-from stripy.stripe_models.customers import Customer
-from stripy.stripe_models.promotion_codes import PromotionCode
+from stripy import fields
+from stripy.models.coupons import Coupon
+from stripy.models.customers import Customer
+from stripy.models.promotion_codes import PromotionCode
 
 
 class Discount(BaseModel):
@@ -12,7 +12,7 @@ class Discount(BaseModel):
     """
 
     id: str
-    start: stripe_fields.DatetimeFromTimestamp
+    start: fields.DatetimeFromTimestamp
     coupon: Coupon
     customer: Customer | None = None
     promotion_code: PromotionCode | None = None
