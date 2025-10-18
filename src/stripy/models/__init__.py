@@ -25,3 +25,6 @@ from .products import (
 from .promotion_codes import (
     PromotionCode,
 )
+from .refunds import (
+    Refund,
+)
