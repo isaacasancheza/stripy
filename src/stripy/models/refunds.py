@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 
 from stripy import fields
-from stripy.models.payment_intents import PaymentIntent
 
 
 class Refund(BaseModel):
@@ -11,7 +10,6 @@ class Refund(BaseModel):
 
     id: str
     amount: fields.DecimalFromInt
-    payment_intent: PaymentIntent
 
     created: fields.DatetimeFromTimestamp
     metadata: fields.Metadata | None = None
