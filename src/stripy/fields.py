@@ -19,7 +19,7 @@ class DecimalFromIntAnnotation(Decimal):
             [
                 core_schema.chain_schema(
                     [
-                        core_schema.int_schema(),
+                        core_schema.int_schema(strict=True),
                         core_schema.no_info_plain_validator_function(
                             cls._int_to_decimal,
                         ),
