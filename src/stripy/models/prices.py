@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 
 from stripy import constants, fields
-from stripy.models.products import Product
 
 
 class Price(BaseModel):
@@ -10,8 +9,6 @@ class Price(BaseModel):
     """
 
     id: str
-    active: bool
-    product: 'Product'
     currency: str
     billing_scheme: constants.PriceBillingScheme
 

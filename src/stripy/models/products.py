@@ -10,9 +10,7 @@ class Product(BaseModel):
 
     id: str
     name: str
-    active: bool
     currency: str
-    livemode: bool
 
     images: list[HttpUrl] = []
     metadata: fields.Metadata | None = None
