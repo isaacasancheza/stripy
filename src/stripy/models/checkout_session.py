@@ -20,5 +20,5 @@ class CheckoutSession(BaseModel):
     payment_intent: PaymentIntent | None = None
 
     created: fields.DatetimeFromTimestamp
-    metadata: dict | None = None
+    metadata: fields.StripeObject | None = None
     expires_at: fields.DatetimeFromTimestamp

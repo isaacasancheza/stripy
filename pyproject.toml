@@ -1,6 +1,6 @@
 [project]
 name = "stripy"
-version = "0.12.0"
+version = "0.13.0"
 description = "Stripe Pydantic Models"
 authors = [
     { name = "Isaac Sánchez", email = "isaac@elrincondelsanchez.com" }

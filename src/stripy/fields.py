@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from typing import Annotated, Any
 
-from pydantic import GetCoreSchemaHandler
+from pydantic import BeforeValidator, GetCoreSchemaHandler
 from pydantic_core import core_schema
 
 
@@ -60,3 +60,10 @@ class DatetimeFromTimestampAnnotation(datetime):
 
 type DecimalFromInt = Annotated[Decimal, DecimalFromIntAnnotation]
 type DatetimeFromTimestamp = Annotated[datetime, DatetimeFromTimestampAnnotation]
+
+type StripeObject = Annotated[
+    dict,
+    BeforeValidator(
+        lambda v: dict(v) if isinstance(v, dict) else v,
+    ),
+]

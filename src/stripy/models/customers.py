@@ -12,6 +12,6 @@ class Customer(BaseModel):
     name: str | None = None
     email: str | None = None
     phone: str | None = None
-    metadata: dict | None = None
+    metadata: fields.StripeObject | None = None
 
     created: fields.DatetimeFromTimestamp
