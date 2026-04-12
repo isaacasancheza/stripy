@@ -11,4 +11,3 @@ class Refund(BaseModel):
     amount: fields.DecimalFromInt
 
     created: fields.DatetimeFromTimestamp
-    metadata: fields.StripeObject | None = None

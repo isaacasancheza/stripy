@@ -12,7 +12,6 @@ class Price(BaseModel):
     billing_scheme: constants.PriceBillingScheme
 
     nickname: str | None = None
-    metadata: fields.StripeObject | None = None
     unit_amount: fields.DecimalFromInt | None = None
 
     created: fields.DatetimeFromTimestamp

@@ -14,7 +14,6 @@ class Product(BaseModel):
     currency: str
 
     images: list[HttpUrl] = []
-    metadata: fields.StripeObject | None = None
     description: str | None = None
 
     created: fields.DatetimeFromTimestamp

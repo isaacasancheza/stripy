@@ -19,7 +19,6 @@ class PromotionCode(BaseModel):
     times_redeemed: int
     max_redemptions: int | None = None
 
-    metadata: fields.StripeObject | None = None
     customer: Customer | None = None
 
     created: fields.DatetimeFromTimestamp
