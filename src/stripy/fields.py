@@ -62,8 +62,8 @@ type DecimalFromInt = Annotated[Decimal, DecimalFromIntAnnotation]
 type DatetimeFromTimestamp = Annotated[datetime, DatetimeFromTimestampAnnotation]
 
 type StripeObject = Annotated[
-    dict,
+    dict[str, Any],
     BeforeValidator(
-        lambda v: dict(v) if isinstance(v, dict) else v,
+        lambda v: dict(v) if hasattr(v, 'items') else v,
     ),
 ]
