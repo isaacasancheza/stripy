@@ -15,7 +15,7 @@ class PaymentIntent(BaseModel):
     currency: str
     amount_received: fields.DecimalFromInt
 
-    metadata: fields.Metadata | None = None
+    metadata: dict | None = None
     customer: Customer | None = None
     payment_method: PaymentMethod | None = None
 

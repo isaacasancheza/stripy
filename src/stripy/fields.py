@@ -5,8 +5,6 @@ from typing import Annotated, Any
 from pydantic import GetCoreSchemaHandler
 from pydantic_core import core_schema
 
-type Metadata = dict[str, str]
-
 
 class DecimalFromIntAnnotation(Decimal):
     @classmethod

@@ -13,6 +13,6 @@ class Customer(BaseModel):
     name: str | None = None
     email: str | None = None
     phone: str | None = None
-    metadata: fields.Metadata | None = None
+    metadata: dict | None = None
 
     created: fields.DatetimeFromTimestamp

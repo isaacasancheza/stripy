@@ -12,4 +12,4 @@ class Refund(BaseModel):
     amount: fields.DecimalFromInt
 
     created: fields.DatetimeFromTimestamp
-    metadata: fields.Metadata | None = None
+    metadata: dict | None = None
