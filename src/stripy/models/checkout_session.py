@@ -1,6 +1,5 @@
-from pydantic import BaseModel
-
 from stripy import constants, fields
+from stripy.models.base import BaseModel
 from stripy.models.customers import Customer
 from stripy.models.discounts import Discount
 from stripy.models.payment_intents import PaymentIntent

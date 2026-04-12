@@ -1,6 +1,5 @@
-from pydantic import BaseModel
-
 from stripy import fields
+from stripy.models.base import BaseModel
 from stripy.models.coupons import Coupon
 from stripy.models.customers import Customer
 from stripy.models.promotion_codes import PromotionCode

@@ -1,9 +1,10 @@
 from decimal import Decimal
 from typing import Annotated
 
-from pydantic import AfterValidator, BaseModel
+from pydantic import AfterValidator
 
 from stripy import constants, fields
+from stripy.models.base import BaseModel
 
 type PercentOff = Annotated[Decimal, AfterValidator(lambda v: v / 100)]
 

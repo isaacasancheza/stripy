@@ -1,6 +1,7 @@
-from pydantic import BaseModel, HttpUrl
+from pydantic import HttpUrl
 
 from stripy import fields
+from stripy.models.base import BaseModel
 
 
 class Product(BaseModel):

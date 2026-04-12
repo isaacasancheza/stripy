@@ -1,6 +1,5 @@
-from pydantic import BaseModel
-
 from stripy import fields
+from stripy.models.base import BaseModel
 
 
 class Refund(BaseModel):

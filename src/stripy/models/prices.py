@@ -1,6 +1,5 @@
-from pydantic import BaseModel
-
 from stripy import constants, fields
+from stripy.models.base import BaseModel
 
 
 class Price(BaseModel):
